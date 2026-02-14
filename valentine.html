@@ -30,7 +30,7 @@
             border-radius: 25px;
             cursor: pointer;
             margin: 10px;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         #yesBtn {
@@ -46,7 +46,7 @@
         /* Floating Hearts */
         .heart {
             position: absolute;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.7);
             animation: float 6s linear infinite;
         }
 
@@ -60,6 +60,11 @@
                 opacity: 0;
             }
         }
+
+        a {
+            text-decoration: none;
+        }
+
     </style>
 </head>
 
@@ -68,7 +73,10 @@
     <h1>Will You Be My Valentine? 💘</h1>
 
     <div class="buttons">
-        <button id="yesBtn" onclick="goToNext()">Yes 💖</button>
+        <a href="tabletennis.html">
+            <button id="yesBtn">Yes 💖</button>
+        </a>
+
         <button id="noBtn" onclick="makeYesBigger()">No 😢</button>
     </div>
 
@@ -80,11 +88,6 @@
             document.getElementById("yesBtn").style.fontSize = yesSize + "px";
         }
 
-        function goToNext() {
-            window.location.href = "tabletennis.html";
-        }
-
-        // Create floating hearts
         function createHeart() {
             const heart = document.createElement("div");
             heart.classList.add("heart");
