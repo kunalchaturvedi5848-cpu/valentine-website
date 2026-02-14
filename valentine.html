@@ -62,3 +62,44 @@
         }
     </style>
 </head>
+
+<body>
+
+    <h1>Will You Be My Valentine? 💘</h1>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="goToNext()">Yes 💖</button>
+        <button id="noBtn" onclick="makeYesBigger()">No 😢</button>
+    </div>
+
+    <script>
+        let yesSize = 18;
+
+        function makeYesBigger() {
+            yesSize += 5;
+            document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+        }
+
+        function goToNext() {
+            window.location.href = "tabletennis.html";
+        }
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
